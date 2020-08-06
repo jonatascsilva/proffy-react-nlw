@@ -1,5 +1,5 @@
 
-# Proffy &middot; ![License](https://img.shields.io/github/license/jonatascsilva/proffy-react-nlw?style=flat) ![GitHub language count](https://img.shields.io/github/languages/count/jonatascsilva/proffy-react-nlw?style=flat) ![GitHub repo size](https://img.shields.io/github/repo-size/jonatascsilva/proffy-react-nlw?style=flat)
+# Proffy &middot; ![License](https://img.shields.io/github/license/jonatascsilva/proffy-react-nlw) ![GitHub language count](https://img.shields.io/github/languages/count/jonatascsilva/proffy-react-nlw) ![GitHub repo size](https://img.shields.io/github/repo-size/jonatascsilva/proffy-react-nlw)
 
 Proffy is an online study platform to connect students and teachers.<br>This
 project was made during the Omnistack track in NLW #2 (Next Level Week) from @Rocketseat.
