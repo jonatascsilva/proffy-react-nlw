@@ -1,42 +1,61 @@
-import React from "react";
+import React from 'react';
 
-import "./TeacherItem.css";
+import api from '../../services/api';
 
-import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
+import './TeacherItem.css';
 
-function TeacherItem() {
+import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+
+export interface Teacher {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+  function createNewConnection() {
+    api.post('connections', {
+      user_id: teacher.id,
+    });
+  }
+
   return (
     <article className="teacher-item">
       <header>
-        <img
-          src="https://avatars3.githubusercontent.com/u/66192181?s=460&u=2ec162f7ea4ba4cbcaa12fe16d3f467798d29303&v=4"
-          alt="Jônatas Silva"
-        />
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Jônatas Silva</strong>
-          <span>Química</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-      <p>
-        Entusiasta das melhores tecnologias de química avançada.
-        <br />
-        <br />
-        Apaixonado por explodir coisas em laboratório e por mudar a vida das
-        pessoas através de experiências. Mais de 200.000 pessoas já passaram por
-        uma das minhas explosões.
-      </p>
+      <p>{teacher.bio}</p>
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 20,00</strong>
+          <strong>R$ {teacher.cost}</strong>
         </p>
-        <button type="button">
-          <img src={whatsappIcon} alt="WhatsApp" />
-          Entrar em contato
-        </button>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={createNewConnection}
+          href={`https://wa.me/${teacher.whatsapp}`}
+        >
+          <button type="button">
+            <img src={whatsappIcon} alt="WhatsApp" />
+            Entrar em contato
+          </button>
+        </a>
       </footer>
     </article>
   );
-}
+};
 
 export default TeacherItem;

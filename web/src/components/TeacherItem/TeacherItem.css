@@ -58,7 +58,11 @@
   color: var(--color-primary);
 }
 
-.teacher-item footer button {
+.teacher-item footer a {
+  text-decoration: none;
+}
+
+.teacher-item footer a button {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -73,11 +77,11 @@
   
   font: 700 1.4rem Archivo;
   color: var(--color-button-text);
-
+  
   transition: 0.2s;
 }
 
-.teacher-item footer button:hover {
+.teacher-item footer a button:hover {
   background: var(--color-secondary-dark);
 }
 
@@ -96,7 +100,7 @@
     margin-left: 1.6rem;
   }
 
-  .teacher-item footer button {
+  .teacher-item footer a {
     width: 25rem;
     font-size: 1.6rem;
     justify-content: center;
